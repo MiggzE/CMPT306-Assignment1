@@ -36,3 +36,13 @@ texture = ExtResource("2_r78rs")
 shape = SubResource("CircleShape2D_lbhot")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Obstacle" type="AnimatableBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacle"]
+position = Vector2(-7, -1)
+polygon = PackedVector2Array(-50, -80, -90, 0, -50, 80, 50, 80, 90, 0, 50, -80)
+
+[node name="Line2D" type="Line2D" parent="Obstacle/CollisionPolygon2D"]
+points = PackedVector2Array(-50, -80, -90, 0, -50, 80, 50, 80, 90, 0, 50, -80)
+width = 30.0
